@@ -1,11 +1,9 @@
-import { useRef } from 'react'
 import Hero from './components/Hero.jsx'
 import Letter from './components/Letter.jsx'
 import Gallery from './components/Gallery.jsx'
 import Travel from './components/Travel.jsx'
 import Sunflowers from './components/Sunflowers.jsx'
 import { HeartsOrbit, Finale } from './components/Final.jsx'
-import MusicPlayer from './components/MusicPlayer.jsx'
 import ScrollProgress from './components/ScrollProgress.jsx'
 import SectionNav from './components/SectionNav.jsx'
 
@@ -39,10 +37,7 @@ const FINAL_LETTER = [
 ]
 
 function App() {
-  const musicRef = useRef(null)
-
   const handleStart = () => {
-    musicRef.current?.start()
     document.getElementById('letter-intro')?.scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -50,7 +45,6 @@ function App() {
     <div className="app">
       <ScrollProgress />
       <SectionNav />
-      <MusicPlayer ref={musicRef} />
       <Hero onStart={handleStart} />
       <Letter id="letter-intro" paragraphs={OPENING_LETTER} />
       <Gallery />

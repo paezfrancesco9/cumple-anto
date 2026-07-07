@@ -23,16 +23,6 @@ Aparecen automáticamente en la galería (Escena 3), en la sección de viajes (E
 
 Si querés poner una frase específica para una foto puntual, editá `src/data/photos.js` y agregá una línea en `CAPTIONS` con el nombre exacto del archivo.
 
-## Agregar la música
-
-Poné tu archivo mp3 en:
-
-```
-public/music/song.mp3
-```
-
-(tiene que llamarse exactamente `song.mp3`). Arranca a sonar cuando ella toca "Presioná para comenzar", y hay un botón flotante abajo a la derecha para pausar/reproducir.
-
 ## Editar los textos
 
 - Carta de apertura y carta final: `src/App.jsx` (constantes `OPENING_LETTER` y `FINAL_LETTER`).
