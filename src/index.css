@@ -1,0 +1,152 @@
+:root {
+  --white: #fffaf3;
+  --pink: #ffd6e0;
+  --pink-deep: #f2a6bb;
+  --gold: #d8ab5b;
+  --gold-light: #f3d9a4;
+  --sunflower: #f6c445;
+  --sunflower-dark: #e0982a;
+  --beige: #fbf1e2;
+  --sky: #cfeaf5;
+  --ink: #5a4636;
+  --shadow: rgba(90, 70, 54, 0.18);
+
+  --font-title: 'Playfair Display', serif;
+  --font-body: 'Quicksand', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: var(--beige);
+  color: var(--ink);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+#root {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-title);
+  font-weight: 600;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+::selection {
+  background: var(--pink-deep);
+  color: var(--white);
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.5rem;
+  padding-left: max(1.5rem, env(safe-area-inset-left));
+  padding-right: max(1.5rem, env(safe-area-inset-right));
+  overflow: hidden;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .scene {
+    padding: 4rem 1.1rem;
+    padding-left: max(1.1rem, env(safe-area-inset-left));
+    padding-right: max(1.1rem, env(safe-area-inset-right));
+  }
+}
+
+.scene-title {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: var(--pink-deep);
+  text-shadow: 0 2px 12px var(--shadow);
+  margin-bottom: 1.5rem;
+}
+
+.scene-quote {
+  font-family: var(--font-title);
+  font-style: italic;
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  color: var(--ink);
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+/* --- floating decorations --- */
+.decor-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.floating-heart, .floating-petal, .floating-sparkle {
+  position: absolute;
+  top: 100%;
+  will-change: transform, opacity;
+  user-select: none;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 0.9; }
+  90% { opacity: 0.8; }
+  100% {
+    transform: translateY(-115vh) translateX(var(--drift, 40px)) rotate(var(--spin, 180deg));
+    opacity: 0;
+  }
+}
+
+@keyframes sway {
+  0%, 100% { transform: translateX(0) rotate(-4deg); }
+  50% { transform: translateX(12px) rotate(4deg); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+.gold-divider {
+  width: 80px;
+  height: 2px;
+  margin: 1.25rem auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,78 @@
+.hearts-scene {
+  background: linear-gradient(180deg, var(--pink) 0%, var(--white) 100%);
+}
+
+.orbit-wrapper {
+  position: relative;
+  width: min(70vw, 420px);
+  height: min(70vw, 420px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.orbit {
+  position: absolute;
+  inset: 0;
+}
+
+.orbit-photo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 78px;
+  height: 78px;
+  margin: -39px 0 0 -39px;
+}
+
+.orbit-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  box-shadow: 0 8px 18px var(--shadow);
+}
+
+.orbit-center {
+  font-size: 2.6rem;
+  filter: drop-shadow(0 4px 10px var(--shadow));
+}
+
+.finale-scene {
+  background: radial-gradient(circle at 50% 40%, var(--gold-light) 0%, var(--pink) 55%, var(--sky) 100%);
+}
+
+.finale-text {
+  position: relative;
+  z-index: 1;
+}
+
+.finale-line {
+  font-family: var(--font-title);
+  font-size: clamp(1.6rem, 5vw, 2.6rem);
+  color: var(--white);
+  text-shadow: 0 4px 18px var(--shadow);
+}
+
+.finale-name {
+  margin-top: 0.75rem;
+  font-size: clamp(2.6rem, 9vw, 5rem);
+  color: var(--white);
+  text-shadow: 0 6px 24px var(--shadow);
+  animation: glow 2.4s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { text-shadow: 0 6px 24px var(--shadow); }
+  50% { text-shadow: 0 6px 34px var(--gold), 0 0 40px var(--sunflower); }
+}
+
+@media (max-width: 480px) {
+  .orbit-photo {
+    width: 58px;
+    height: 58px;
+    margin: -29px 0 0 -29px;
+  }
+}

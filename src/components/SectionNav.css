@@ -1,0 +1,35 @@
+.section-nav {
+  position: fixed;
+  right: max(0.6rem, env(safe-area-inset-right));
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  z-index: 1100;
+}
+
+.section-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(90, 70, 54, 0.25);
+  padding: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.section-dot--active {
+  background: var(--pink-deep);
+  transform: scale(1.5);
+}
+
+@media (max-width: 480px) {
+  .section-nav {
+    right: max(0.4rem, env(safe-area-inset-right));
+    gap: 0.45rem;
+  }
+  .section-dot {
+    width: 6px;
+    height: 6px;
+  }
+}

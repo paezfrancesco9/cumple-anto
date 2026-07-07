@@ -1,0 +1,32 @@
+.sunflower-scene {
+  background: linear-gradient(180deg, var(--sunflower) 0%, var(--gold-light) 55%, var(--beige) 100%);
+  min-height: 100svh;
+}
+
+.sunflower-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.sunflower {
+  position: absolute;
+  transform-origin: bottom center;
+  filter: drop-shadow(0 6px 10px var(--shadow));
+}
+
+.sunflower-quote {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-title);
+  font-style: italic;
+  font-size: clamp(1.4rem, 4.5vw, 2.4rem);
+  color: var(--white);
+  text-shadow: 0 3px 14px var(--shadow);
+  max-width: 640px;
+  background: rgba(90, 70, 54, 0.18);
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(2px);
+}

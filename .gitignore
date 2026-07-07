@@ -1,0 +1,7 @@
+node_modules
+dist
+.DS_Store
+*.local
+
+# fotos originales sin recortar/renombrar (las que usa el sitio están en src/assets/photos)
+/WhatsApp Image*.jpeg
